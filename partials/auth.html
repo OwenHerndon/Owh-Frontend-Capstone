@@ -1,0 +1,67 @@
+<div class="container col-xs-6 col-xs-offset-3">
+    <div class= "row"> <!-- everything within this div is the actual form -->
+        <button class="btn btn-info col-xs-6" ng-click="setLoginContainer()">Login</button>
+        <button class="btn btn-success col-xs-6" ng-click="setRegisterContainer()">Register</button>
+    </div>
+<!-- *****************Login CONTAINER ************************** -->
+
+    <div class="row">
+    <form ng-show="loginContainer">
+        <h3>LOGIN FORM</h3>
+
+        <form ng-show="loginContainer">
+        <div>
+          <label>Email Address</label>
+          <input type="email" class="col-xs-offset-1 col-xs-10" placeholder="Email address" ng-model="login.email" required autofocus> <!-- ng model binds everything and required autofocus - autofocuses on the first part  -->
+        </div>
+
+        <div>
+          <label>Password</label>
+          <input type="password" class="col-xs-offset-1 col-xs-10" placeholder="Password" ng-model="login.password" required> <!-- ng model binds everything-->
+        </div>
+
+
+         <div class="form-group">
+          <a href class="btn btn-lg btn-info col-xs-offset-1 col-xs-10" ng-click="loginUser(login)">Submit Login</a> <!-- "login" is being used above- for ex: login.username , etc" - This is one of many ways to do this -->
+        </div>
+
+    </form>
+
+<!-- *****************LOGIN CONTAINER ************************** -->
+
+
+<!-- *****************REGISTER CONTAINER ************************** -->
+
+    </form>
+
+    <form ng-show="registerContainer">
+
+        <div>
+          <label>Email Address</label>
+          <input type="email" class="col-xs-offset-1 col-xs-10" placeholder="Email address" ng-model="register.email" required autofocus> <!-- ng model binds everything and required autofocus - autofocuses on the first part  -->
+        </div>
+
+        <div>
+          <label>Password</label>
+          <input type="password" class="col-xs-offset-1 col-xs-10" placeholder="Password" ng-model="register.password" required> <!-- ng model binds everything-->
+        </div>
+
+        <div>
+          <label>User Name</label>
+          <input type="username" class="col-xs-offset-1 col-xs-10" placeholder="Username" ng-model="register.username" required> <!-- ng model binds everything-->
+        </div>
+
+         <div class="form-group">
+          <a href class="btn btn-lg btn-success col-xs-offset-1 col-xs-10" ng-click="registerUser(register)">Submit Registration</a> <!-- "register" is being used above- for ex: register.username , etc" - This is one of many ways to do this //SEE AUTH CTRL for function of registerUser -->
+        </div>
+
+    </form>
+<!-- *****************REGISTER CONTAINER ************************** -->
+
+
+    </div>
+
+
+
+
+</div>
