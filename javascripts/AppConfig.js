@@ -36,20 +36,20 @@ app.config(function($routeProvider){
 			controller:'AuthCtrl'
 		})
 		.when('/search', {
-      templateUrl: 'partials/search.html', //see partials folder
-      controller: 'UserPinsCtrl', // see new controller file
-      resolve: {isAuth}
-    })
-    .when('/boards', {
-      templateUrl: 'partials/boards.html',
-      controller: 'UserPinsCtrl',
-      resolve: {isAuth}
-    })
-    .when('/new-pin', {
-      templateUrl: 'partials/new-pin.html',
-      controller: 'UserPinsCtrl',
-      resolve: {isAuth}
-    })
+      		templateUrl: 'partials/search.html', //see partials folder
+      		controller: 'SearchCtrl', // see new controller file
+      		resolve: {isAuth}
+    	})
+    	.when('/main', {
+      		templateUrl: 'partials/main.html',
+      		controller: 'MainCtrl',
+      		resolve: {isAuth}
+    	})
+    	.when('/new-place', {
+      		templateUrl: 'partials/addnew.html',
+      		controller: 'AddNewCtrl',
+      		resolve: {isAuth}
+    	})
 		.when('/logout',{
 			templateUrl:'partials/auth.html',
 			controller:'AuthCtrl',
