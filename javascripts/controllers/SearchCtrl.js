@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("SearchCtrl", function($scope){
+app.controller("SearchCtrl", function($scope, $compile){
     
     function initAutocomplete() {
         $scope.map = new google.maps.Map(document.getElementById('map'), {
@@ -83,23 +83,51 @@ app.controller("SearchCtrl", function($scope){
             }));
             console.log("markers", $scope.markers);
 
+            // function nameFromMap(res) { // success
+            //     $scope.places.name = res.name;
+            //     // $scope.place.lat = res.geometry.location.lat();
+            //     // $scope.place.lng = res.geometry.location.lng();
+            // 	}
             
+
+   //          $scope.markers.push(selectedMarker);
+
+   //          //var infowindow = new google.maps.InfoWindow({ content: compiled[0]});
+
+			// var compiled = $compile('<button ng-click="navigate">Add</button>')($scope);
+			// var selectedMarker = new google.maps.Marker({
+			//     // position: new.google.maps.LatLng(lat, lng),
+			//     position: place.geometry.location,
+			//     icon: icon,
+   //            	title: place.name,
+			//     map: $scope.map,
+			//     content: compiled[0]
+			// });
+			// console.log("selectedMarker", selectedMarker);
+			
+			// var infowindow = new google.maps.InfoWindow({ content: compiled[0]});
+			// google.maps.event.addListener(selectedMarker, 'click', function() {
+			//         infowindow.setContent(this.content);
+			//         infowindow.open($scope.map, selectedMarker);
+			//         $scope.map.setCenter(this.position);
+			//  });
+
 
          //    marker.addListener('click', function() {
          //  		infoWindow.open($scope.map, $scope.markers);
          //  		console.log("infoWindow", infoWindow);
         	// });
             //taylors button
-            // // for (var i = 0; i < $scope.markers.length; i++) {
+            // for (var i = 0; i < $scope.markers.length; i++) {
             //    var marker = $scope.markers[i];
             //     var contentString = '<button class="btn btn-success" ng-click=buttonClick()>Hey</button>';
-            // //    // var compiled = $compile(contentString)($scope);
+            //    var compiled = $compile(contentString)($scope);
             //     google.maps.event.addListener($scope.marker, 'click', function() {
             //         infoWindow.setContent(contentString);
             // 	    infoWindow.open($scope.map, this);
 
             //     });
-           	// // }
+           	// }
            	//***********************
 
             if (place.geometry.viewport) {
