@@ -1,7 +1,8 @@
 <h1>search</h1>
-
-<div  class="boarder">
-	<h3>Name:{{map.places.name}}</h3>
+<div>
+	<div ng-repeat="place in places" class="boarder">
+		<h3>Name:{{place.name}}</h3>
+	</div>
 </div>
 
 <!-- <form name="resForm" class="form-horizontal" novalidate 
