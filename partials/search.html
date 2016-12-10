@@ -1,7 +1,9 @@
 <h1>search</h1>
 <div>
 	<div ng-repeat="place in places" class="boarder">
-		<h3>Name:{{place.name}}</h3>
+		<h3 ng-model="newPlace.name">{{place.name}}</h3>
+		<h3>{{place.formatted_address}}
+		<button type="button" class="btn btn-primary btn-lg col-xs-2 " ng-click="addSearchPlace(place)">Add New Place</button>
 	</div>
 </div>
 

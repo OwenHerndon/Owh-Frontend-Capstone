@@ -27,4 +27,14 @@ app.controller("MainCtrl", function($scope, $rootScope, MainFactory){
 		console.log("checkedPlaces", checkedPlaces);
 		$scope.randomSelectedPlace = checkedPlaces[Math.floor(Math.random() * checkedPlaces.length)];
 	};
+
+	$scope.resetButton = function(checks){
+		checks.forEach(function(check){
+			check.isSelected = false;
+			MainFactory.editPlace(check).then(function(response){
+		});
+		});
+		console.log("reset place", checks);
+		
+	};
 });

@@ -1,6 +1,7 @@
 <h1>main</h1>
 
 <button ng-click="randomButton(places | filter:{isSelected:true})">Random</button>
+<button ng-click="resetButton(places | filter:{isSelected:true})">Reset</button>
 <h1>Radnom result of selected = {{randomSelectedPlace.name}}</h1>
 
 <div ng-repeat="place in places" class="boarder">

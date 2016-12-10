@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("SearchCtrl", function($scope, $compile){
+app.controller("SearchCtrl", function($scope, $compile, $location, $rootScope, NewFactory){
     
     function initAutocomplete() {
         $scope.map = new google.maps.Map(document.getElementById('map'), {
@@ -48,6 +48,7 @@ app.controller("SearchCtrl", function($scope, $compile){
         // more details for that place.
         searchBox.addListener('places_changed', function() {
           $scope.places = searchBox.getPlaces();
+          $scope.$apply();
           console.log("places", $scope.places); //go information to dive into
           if ($scope.places.length === 0) {
             return;
@@ -83,53 +84,6 @@ app.controller("SearchCtrl", function($scope, $compile){
             }));
             console.log("markers", $scope.markers);
 
-            // function nameFromMap(res) { // success
-            //     $scope.places.name = res.name;
-            //     // $scope.place.lat = res.geometry.location.lat();
-            //     // $scope.place.lng = res.geometry.location.lng();
-            // 	}
-            
-
-   //          $scope.markers.push(selectedMarker);
-
-   //          //var infowindow = new google.maps.InfoWindow({ content: compiled[0]});
-
-			// var compiled = $compile('<button ng-click="navigate">Add</button>')($scope);
-			// var selectedMarker = new google.maps.Marker({
-			//     // position: new.google.maps.LatLng(lat, lng),
-			//     position: place.geometry.location,
-			//     icon: icon,
-   //            	title: place.name,
-			//     map: $scope.map,
-			//     content: compiled[0]
-			// });
-			// console.log("selectedMarker", selectedMarker);
-			
-			// var infowindow = new google.maps.InfoWindow({ content: compiled[0]});
-			// google.maps.event.addListener(selectedMarker, 'click', function() {
-			//         infowindow.setContent(this.content);
-			//         infowindow.open($scope.map, selectedMarker);
-			//         $scope.map.setCenter(this.position);
-			//  });
-
-
-         //    marker.addListener('click', function() {
-         //  		infoWindow.open($scope.map, $scope.markers);
-         //  		console.log("infoWindow", infoWindow);
-        	// });
-            //taylors button
-            // for (var i = 0; i < $scope.markers.length; i++) {
-            //    var marker = $scope.markers[i];
-            //     var contentString = '<button class="btn btn-success" ng-click=buttonClick()>Hey</button>';
-            //    var compiled = $compile(contentString)($scope);
-            //     google.maps.event.addListener($scope.marker, 'click', function() {
-            //         infoWindow.setContent(contentString);
-            // 	    infoWindow.open($scope.map, this);
-
-            //     });
-           	// }
-           	//***********************
-
             if (place.geometry.viewport) {
               // Only geocodes have viewport.
               bounds.union(place.geometry.viewport);
@@ -150,4 +104,18 @@ app.controller("SearchCtrl", function($scope, $compile){
       }
 
       initAutocomplete();
+
+      	$scope.newPlace = {};
+
+		$scope.addSearchPlace=function(place){
+			$scope.newPlace.name = place.name;
+			console.log("places in add function", $scope.places);
+			console.log("places.name in add function", $scope.places.name);
+			$scope.newPlace.isSelected = false;
+			$scope.newPlace.uid = $rootScope.user.uid;
+			NewFactory.postNewPlace($scope.newPlace).then(function(placeId){
+				$location.url("/main");
+				$scope.newPlace = {};
+			});
+		};
 });
