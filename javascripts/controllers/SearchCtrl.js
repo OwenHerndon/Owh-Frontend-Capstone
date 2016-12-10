@@ -109,8 +109,6 @@ app.controller("SearchCtrl", function($scope, $compile, $location, $rootScope, N
 
 		$scope.addSearchPlace=function(place){
 			$scope.newPlace.name = place.name;
-			console.log("places in add function", $scope.places);
-			console.log("places.name in add function", $scope.places.name);
 			$scope.newPlace.isSelected = false;
 			$scope.newPlace.uid = $rootScope.user.uid;
 			NewFactory.postNewPlace($scope.newPlace).then(function(placeId){

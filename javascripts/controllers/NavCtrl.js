@@ -11,7 +11,7 @@ app.controller("NavCtrl", function($scope){
 	{	name:"Main",
 		url: "#/main"
 	},
-	{	name:"Add New",
+	{	name:"Custom",
 		url: "#/new-place"
 	}
 	];

@@ -1,13 +1,12 @@
-<h1>search</h1>
-
 <input id="pac-input" class="controls" type="text" placeholder="Search Box">
 
 <div id="map"></div>
 
  <div>
-	<div ng-repeat="place in places" class="boarder">
+	<div ng-repeat="place in places | filter:{'types' : 'food'}" class="boarder">
 		<div class="col-xs-9">{{place.name}}</div>
-		<div class="col-xs-10">{{place.formatted_address}}<div>
+		<div class="col-xs-12">{{place.formatted_address}}<div>
+		<div class="col-xs-10">Rating: {{place.rating}}<div>
 		<button type="button" class="btn btn-primary btn-sm col-xs-2 " ng-click="addSearchPlace(place)">Add</button>
 	</div>
 </div>
