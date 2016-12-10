@@ -24,11 +24,13 @@ app.controller("MainCtrl", function($scope, $rootScope, MainFactory){
 	};
 
 	$scope.randomButton = function(checkedPlaces){
+		$scope.randomDiv = true;
 		console.log("checkedPlaces", checkedPlaces);
 		$scope.randomSelectedPlace = checkedPlaces[Math.floor(Math.random() * checkedPlaces.length)];
 	};
 
 	$scope.resetButton = function(checks){
+		$scope.randomDiv = false;
 		checks.forEach(function(check){
 			check.isSelected = false;
 			MainFactory.editPlace(check).then(function(response){

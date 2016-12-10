@@ -1,24 +1,13 @@
 <h1>search</h1>
-<div>
-	<div ng-repeat="place in places" class="boarder">
-		<h3 ng-model="newPlace.name">{{place.name}}</h3>
-		<h3>{{place.formatted_address}}
-		<button type="button" class="btn btn-primary btn-lg col-xs-2 " ng-click="addSearchPlace(place)">Add New Place</button>
-	</div>
-</div>
-
-<!-- <form name="resForm" class="form-horizontal" novalidate 
-    ng-submit="send()">
-        <div class="form-group">
-            <label for="resName" class="col-xs-2 control-label">Name</label>
-            <div class="col-xs-10">
-                <input name="resName" type="text" class="form-control" 
-                ng-model="place.name" required />
-            </div>
-        </div> -->
 
 <input id="pac-input" class="controls" type="text" placeholder="Search Box">
 
 <div id="map"></div>
 
-  
+ <div>
+	<div ng-repeat="place in places" class="boarder">
+		<div class="col-xs-9">{{place.name}}</div>
+		<div class="col-xs-10">{{place.formatted_address}}<div>
+		<button type="button" class="btn btn-primary btn-sm col-xs-2 " ng-click="addSearchPlace(place)">Add</button>
+	</div>
+</div>
