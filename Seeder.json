@@ -1,0 +1,35 @@
+{
+	"places":{
+	"place0":{
+		"name":"Wing Basket",
+		"isSelected": true,
+		"uid":"09Im66o6iwVUCUE7OhYy7RiMam43"
+	},
+	"place1":{
+		"name":"Drifters BBQ",
+		"isSelected": true,
+		"uid":"09Im66o6iwVUCUE7OhYy7RiMam43"
+	},
+	"place2":{
+		"name":"The Corner Pub",
+		"isSelected": false,
+		"uid":"09Im66o6iwVUCUE7OhYy7RiMam43"
+	},
+	"place3":{
+		"name":"Judge Beans",
+		"isSelected": true,
+		"uid":"09Im66o6iwVUCUE7OhYy7RiMam43"
+	},
+	"place4":{
+		"name":"Chic-fil-a",
+		"isSelected": false,
+		"uid":"09Im66o6iwVUCUE7OhYy7RiMam43"
+	}
+	},
+	"users":{
+		"user0":{
+			"uid":"09Im66o6iwVUCUE7OhYy7RiMam43",
+			"username":"a"
+		}
+	}
+}

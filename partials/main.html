@@ -1,0 +1,24 @@
+
+
+<button ng-click="randomButton(places | filter:{isSelected:true})">Random</button>
+<button ng-click="resetButton(places | filter:{isSelected:true})">Reset</button>
+
+<div id="randomDiv" ng-show="randomDiv">
+	<h1>Radnom result of selected = {{randomSelectedPlace.name}}</h1>
+</div>
+
+<div ng-repeat="place in places | filter:{isSelected:true}" class="">
+	<div class="panel-body">
+            <div class="col-xs-1"><input type="checkbox" ng-model="place.isSelected" ng-change="inputChange(place)"></div>
+            <div class="col-xs-9">{{place.name}}</div>
+            <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deletePlace(place.id)"></button></div>
+    </div>
+</div>
+
+<div ng-repeat="place in places | filter:{isSelected:false}" class="">
+	<div class="panel-body">
+            <div class="col-xs-1"><input type="checkbox" ng-model="place.isSelected" ng-change="inputChange(place)"></div>
+            <div class="col-xs-9">{{place.name}}</div>
+            <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deletePlace(place.id)"></button></div>
+    </div>
+</div>
