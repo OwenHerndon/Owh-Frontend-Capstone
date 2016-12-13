@@ -1,7 +1,7 @@
-<nav class="navbar navbar-default" ng-controller="NavCtrl">
+<!-- <nav class="navbar navbar-default" ng-controller="NavCtrl">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+    <! Brand and toggle get grouped for better mobile display -->
+   <!--  <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
       </button>
     </div>
@@ -12,6 +12,15 @@
                 </ul>
         </div>
       
-    </div><!-- /.navbar-collapse -->
+    </div><!/.navbar-collapse -->
     <!-- /.container-fluid -->
-</nav>
+<!-- </nav> -->
+
+<nav ng-controller="NavCtrl">
+    <div class="nav-wrapper red darken-2">
+      <!-- <a href="#" class="brand-logo center">Logo</a> -->
+      <ul class="center" ng-repeat="navItem in navItems" ng-show="user">
+        <li><a href="{{navItem.url}}">{{navItem.name}}</a></li>
+      </ul>
+    </div>
+  </nav>

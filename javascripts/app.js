@@ -1,3 +1,3 @@
 "use strict";
 
-var app = angular.module("CapApp", ["ngRoute"]);
+var app = angular.module("CapApp", ["ngRoute", 'ui.sortable']);

@@ -18,6 +18,8 @@
     "matchdep": "^1.0.1"
   },
   "dependencies": {
-    "angular-google-maps": "^2.4.0"
+    "angular-google-maps": "^2.4.0",
+    "angular-ui-sortable": "^0.16.0",
+    "jquery-ui": "^1.12.1"
   }
 }
