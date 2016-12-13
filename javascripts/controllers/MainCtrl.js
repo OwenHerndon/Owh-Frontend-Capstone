@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("MainCtrl", function($scope, $rootScope, MainFactory){
+app.controller("MainCtrl", function($scope, $rootScope, $location, MainFactory){
 	
 	$scope.places = [];
 	
@@ -15,6 +15,7 @@ app.controller("MainCtrl", function($scope, $rootScope, MainFactory){
 	$scope.deletePlace = function(placeId){
 		MainFactory.deletePlace(placeId).then(function(response){
 			getPlaces();
+			// $location.url("/main");
 		});
 	};
 
