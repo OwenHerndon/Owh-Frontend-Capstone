@@ -15,8 +15,10 @@ app.controller("MainCtrl", function($scope, $rootScope, $location, MainFactory){
 	$scope.deletePlace = function(placeId){
 		MainFactory.deletePlace(placeId).then(function(response){
 			getPlaces();
+			// event.preventDefault();
 			// $location.url("/main");
 		});
+		console.log("glitchy");
 	};
 
 	$scope.inputChange = function(place){
