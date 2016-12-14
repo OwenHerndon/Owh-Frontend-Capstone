@@ -1,10 +1,13 @@
 
-
-<button class="waves-effect waves-light btn col s6" data-loading-text="<i class='fa fa-cog' fa-spin></i>" ng-click="randomButton(places | filter:{isSelected:true})">Random</button>
-<button class="waves-effect waves-light btn col s6" ng-click="resetButton(places | filter:{isSelected:true})">Reset</button>
+<div>
+	<button class="waves-effect waves-light btn col s6" data-loading-text="<i class='fa fa-cog' fa-spin></i>" ng-click="randomButton(places | filter:{isSelected:true})">Random</button>
+	<button class="waves-effect waves-light btn col s6" ng-click="resetButton(places | filter:{isSelected:true})">Reset</button>
+</div>
 
 <div id="randomDiv" ng-show="randomDiv">
-	<h3>Lets go to {{randomSelectedPlace.name}}!</h3>
+	<div>
+		<h4>Lets go to {{randomSelectedPlace.name}}!</h4>
+	</div>
 </div>
 
 

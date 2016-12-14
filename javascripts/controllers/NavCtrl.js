@@ -7,7 +7,16 @@ app.controller("NavCtrl", function($scope){
 	},
 	{	name:"Search",
 		url: "#/search"
-	},
+	}
+	// {	name:"Main",
+	// 	url: "#/main"
+	// },
+	// {	name:"Custom",
+	// 	url: "#/new-place"
+	// }
+	];
+
+	$scope.navItemsRight = [
 	{	name:"Main",
 		url: "#/main"
 	},

@@ -18,8 +18,11 @@
 
 <nav ng-controller="NavCtrl">
     <div class="nav-wrapper red darken-2">
-      <a href="#" class="brand-logo center">Logo</a>
-      <ul class="center" ng-repeat="navItem in navItems" ng-show="user">
+      <a href="#/main" class="brand-logo center">Logo</a>
+      <ul class="left" ng-repeat="navItem in navItems" ng-show="user">
+        <li><a href="{{navItem.url}}">{{navItem.name}}</a></li>
+      </ul>
+      <ul class="right" ng-repeat="navItem in navItemsRight" ng-show="user">
         <li><a href="{{navItem.url}}">{{navItem.name}}</a></li>
       </ul>
     </div>
