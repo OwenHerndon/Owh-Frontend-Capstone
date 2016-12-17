@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("MainCtrl", function($scope, $rootScope, MainFactory){
+app.controller("MainCtrl", function($scope, $rootScope, $location, MainFactory){
 	
 	$scope.places = [];
 	
@@ -16,6 +16,7 @@ app.controller("MainCtrl", function($scope, $rootScope, MainFactory){
 		MainFactory.deletePlace(placeId).then(function(response){
 			getPlaces();
 		});
+		console.log("glitchy");
 	};
 
 	$scope.inputChange = function(place){

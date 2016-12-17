@@ -4,6 +4,7 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, 
 
 	$scope.loginContainer = true;
 	$scope.registerContainer = false;
+	$rootScope.user = false;
 
 	  $scope.login = {
     	email: "a@a.com",
@@ -14,6 +15,7 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, 
 		AuthFactory.logout();
 		$rootScope.user = {};
 		$location.url("/auth");
+		// console.log("user", $rootScope.user);
 	}
 
 	let logMeIn = function(loginStuff){

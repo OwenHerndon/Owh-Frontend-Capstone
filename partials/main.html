@@ -1,24 +1,49 @@
+<div class="container">
+	<div>
+		<button class="waves-effect waves-light btn col s6" data-loading-text="<i class='fa fa-cog' fa-spin></i>" ng-click="randomButton(places | filter:{isSelected:true})">Random</button>
+		<button class="waves-effect waves-light btn col s6" ng-click="resetButton(places | filter:{isSelected:true})">Reset</button>
+	</div>
+
+	<div id="randomDiv" ng-show="randomDiv">
+		<div class="col offset-s1">
+			<h4>Lets go to {{randomSelectedPlace.name}}!</h4>
+		</div>
+	</div>
 
 
-<button ng-click="randomButton(places | filter:{isSelected:true})">Random</button>
-<button ng-click="resetButton(places | filter:{isSelected:true})">Reset</button>
+	<div class="row">
+     	<div class="col s10">
 
-<div id="randomDiv" ng-show="randomDiv">
-	<h1>Radnom result of selected = {{randomSelectedPlace.name}}</h1>
+     		<div class="row">
+				<div ng-repeat="place in places | filter:{isSelected:true}" class="checkedDiv">
+            		<div class=" switch col s2">
+            			<label>
+            			<input type="checkbox" ng-model="place.isSelected" ng-change="inputChange(place)">
+            			<span class="lever"></span>
+            			</label>
+            		</div>
+            		<div class="col s9">{{place.name}}</div>
+            		<div class="col s1"><button class="btn-floating btn red darken-2 fa fa-trash-o" ng-click="deletePlace(place.id)"></button></div>
+    			</div>
+    		</div>
+
+
+			<div class="row" ui-sortable ng-model="places">
+				<div ng-repeat="place in places | filter:{isSelected:false}" class="nonCheckedDiv">
+            		<div class=" switch col s2">
+            			<label>
+            				<input type="checkbox" ng-model="place.isSelected" ng-change="inputChange(place)">
+            				<span class="lever"></span>
+            			</label>
+            		</div>
+            	
+            		<div class="col s9">{{place.name}}</div>
+            		<div class="col s1"><button type="submit" class="btn-floating btn red darken-2 fa fa-trash-o" ng-click="deletePlace(place.id)"></button></div>
+    			</div>
+			</div>
+		</div>
+	
+	</div>
+
 </div>
 
-<div ng-repeat="place in places | filter:{isSelected:true}" class="">
-	<div class="panel-body">
-            <div class="col-xs-1"><input type="checkbox" ng-model="place.isSelected" ng-change="inputChange(place)"></div>
-            <div class="col-xs-9">{{place.name}}</div>
-            <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deletePlace(place.id)"></button></div>
-    </div>
-</div>
-
-<div ng-repeat="place in places | filter:{isSelected:false}" class="">
-	<div class="panel-body">
-            <div class="col-xs-1"><input type="checkbox" ng-model="place.isSelected" ng-change="inputChange(place)"></div>
-            <div class="col-xs-9">{{place.name}}</div>
-            <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deletePlace(place.id)"></button></div>
-    </div>
-</div>

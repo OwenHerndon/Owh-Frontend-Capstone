@@ -21,6 +21,14 @@ h3 img {
     border: 1px solid silver;
 }
 
+#randomDiv{
+	div{
+		h4{
+			text-align: center;
+		}
+	}
+}
+
 
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -71,4 +79,8 @@ h3 img {
       }
       #target {
         width: 345px;
+      }
+
+      .searchResult{
+      	margin-top: 5px;
       }
