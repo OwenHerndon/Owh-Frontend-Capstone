@@ -2,6 +2,7 @@
 
 app.controller("MainCtrl", function($scope, $rootScope, $location, MainFactory){
 	
+	$scope.checkedPlaces = [];
 	$scope.places = [];
 	
 	let getPlaces = function(){
@@ -25,13 +26,17 @@ app.controller("MainCtrl", function($scope, $rootScope, $location, MainFactory){
 	};
 
 	$scope.randomButton = function(checkedPlaces){
+		if(checkedPlaces === null){
+			$scope.randomDiv = false;
+		}else{
 		$scope.randomDiv = true;
 		console.log("checkedPlaces", checkedPlaces);
 		$scope.randomSelectedPlace = checkedPlaces[Math.floor(Math.random() * checkedPlaces.length)];
+		}
 	};
 
 	$scope.resetButton = function(checks){
-		$scope.randomDiv = false;
+		$scope.randomSelectedPlace = null;
 		checks.forEach(function(check){
 			check.isSelected = false;
 			MainFactory.editPlace(check).then(function(response){
