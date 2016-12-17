@@ -20,6 +20,7 @@
   "dependencies": {
     "angular-google-maps": "^2.4.0",
     "angular-ui-sortable": "^0.16.0",
+    "grunt-contrib-copy": "^1.0.0",
     "jquery-ui": "^1.12.1"
   }
 }
