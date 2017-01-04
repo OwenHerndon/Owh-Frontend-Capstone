@@ -5,8 +5,8 @@
 	</div>
 
 	<div id="randomDiv" ng-if="randomSelectedPlace">
-		<div class="col offset-s1">
-			<h4>Lets go to {{randomSelectedPlace.name}}!</h4>
+		<div class="col offset-s3">
+			<h4 class="bold">Lets go to {{randomSelectedPlace.name}}!</h4>
 		</div>
 	</div>
 
@@ -14,15 +14,15 @@
 	<div class="row">
      	<div class="col s10">
 
-     		<div class="row">
+     		<div class="row topDiv">
 				<div ng-repeat="place in places | filter:{isSelected:true}" class="checkedDiv">
-            		<div class=" switch col s2">
+            		<div class="switch col s2">
             			<label>
             			<input type="checkbox" ng-model="place.isSelected" ng-change="inputChange(place)">
             			<span class="lever"></span>
             			</label>
             		</div>
-            		<div class="col s9">{{place.name}}</div>
+            		<div class="flow-text col s9">{{place.name}}</div>
             		<div class="col s1"><button class="btn-floating btn red darken-2 fa fa-trash-o" ng-click="deletePlace(place.id)"></button></div>
     			</div>
     		</div>
@@ -37,7 +37,7 @@
             			</label>
             		</div>
             	
-            		<div class="col s9">{{place.name}}</div>
+            		<div class="flow-text col s9">{{place.name}}</div>
             		<div class="col s1"><button type="submit" class="btn-floating btn red darken-2 fa fa-trash-o" ng-click="deletePlace(place.id)"></button></div>
     			</div>
 			</div>
