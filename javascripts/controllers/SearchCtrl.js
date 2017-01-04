@@ -4,7 +4,7 @@ app.controller("SearchCtrl", function($scope, $compile, $location, $rootScope, N
     
     function initAutocomplete() {
         $scope.map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -33.8688, lng: 151.2195},
+          center: {lat: 36.1627, lng: -86.7816},
           zoom: 13,
           mapTypeId: 'roadmap'
         });
